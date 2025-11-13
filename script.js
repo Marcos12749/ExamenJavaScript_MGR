@@ -1,11 +1,11 @@
 const contenedor = document.getElementById("contenedor-tarjetas");
 const boton = document.getElementById("generar-btn");
 
-
+// bateria de nombres
 const nombres = ["Lucía", "Mario", "Elena", "Carlos", "Laura", "Diego", "Juan", "Pedro", "Marcos", "Ivan"];
 const apellidos = ["García", "Ruiz", "Santos", "López", "Martín"];
 
-
+// Definición de la clase Usuario
 class Usuario {
   constructor(nombre, edad, email, activo) {
     this.nombre = nombre;
@@ -15,7 +15,7 @@ class Usuario {
     this.fecha = new Date(); 
   }
 
-
+// Método para mostrar la fecha en formato local
   mostrarFecha() {
     return `Fecha: ${this.fecha.toLocaleDateString("es-ES")}`;
   }
@@ -26,7 +26,7 @@ class Usuario {
     return "senior";
   }
 }
-
+// Función para generar usuarios aleatorios
 function generarUsuarios(cantidad) {
   const lista = [];
 
@@ -48,7 +48,7 @@ function generarUsuarios(cantidad) {
 
   mostrarUsuarios(lista);
 }
-
+// Función para mostrar los usuarios en el DOM
 function mostrarUsuarios(lista) {
   contenedor.innerHTML = "";
 
@@ -73,7 +73,7 @@ function mostrarUsuarios(lista) {
     contenedor.appendChild(tarjeta);
   });
 }
-
+// Evento del botón para generar usuarios
 boton.addEventListener("click", () => {
   const cantidad = Number(prompt("¿Cuántos usuarios quieres generar?"));
 
